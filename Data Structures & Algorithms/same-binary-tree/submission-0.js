@@ -1,0 +1,58 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     constructor(val = 0, left = null, right = null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+class Solution {
+    /**
+     * @param {TreeNode} p
+     * @param {TreeNode} q
+     * @return {boolean}
+     */
+    isSameTree(p, q) {
+        const stackP = [p];
+        const stackQ = [q];
+
+        while (stackP.length > 0 && stackQ.length > 0) {
+            const nodeP = stackP.pop();
+            const nodeQ = stackQ.pop();
+
+            if (!nodeP && !nodeQ) continue;
+
+            if (!nodeP || !nodeQ) return false;
+
+            if (nodeP.val !== nodeQ.val) return false;
+
+            stackP.push(nodeP.left);
+            stackP.push(nodeP.right);
+
+            stackQ.push(nodeQ.left);
+            stackQ.push(nodeQ.right);
+
+            if (nodeP.left) {
+                
+            }
+
+            if (nodeP.right) {
+                
+            }
+
+            if (nodeQ.left) {
+                
+            }
+
+            if (nodeQ.right) {
+                
+            }
+
+        }
+
+        return stackP.length === stackQ.length;;
+    }
+}
